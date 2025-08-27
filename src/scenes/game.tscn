@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://d22b66kpdirfw"]
+[gd_scene load_steps=4 format=3 uid="uid://d22b66kpdirfw"]
 
 [ext_resource type="Script" uid="uid://bs7rwe1lnmimh" path="res://scenes/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://xb2t0n7vd7jp" path="res://scenes/character/character.tscn" id="2_yqjtg"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_yqjtg"]
+vertices = PackedVector2Array(733.898, 433.852, -88.7266, 422.141, -75.25, -99.0234, 729.078, -100.969)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-85, -109, 739, -111, 744, 444, -99, 432)])
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_uwrxv")
 
 [node name="Character" parent="." instance=ExtResource("2_yqjtg")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_yqjtg")
