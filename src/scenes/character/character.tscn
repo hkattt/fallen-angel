@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://xb2t0n7vd7jp"]
+[gd_scene load_steps=4 format=3 uid="uid://xb2t0n7vd7jp"]
 
 [ext_resource type="Script" uid="uid://cyd1pr7nnloq0" path="res://scenes/character/character.gd" id="1_6nn2t"]
+[ext_resource type="PackedScene" uid="uid://bf6qv2igw4tlr" path="res://scenes/guns/gun.tscn" id="2_cuyo6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nn2t"]
 size = Vector2(16, 16)
@@ -15,3 +16,5 @@ polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
 position = Vector2(8, 8)
 scale = Vector2(0.986286, 1)
 shape = SubResource("RectangleShape2D_6nn2t")
+
+[node name="Gun" parent="." instance=ExtResource("2_cuyo6")]
