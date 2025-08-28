@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx1tmvagmv17l"]
+
+[ext_resource type="Script" uid="uid://dcebud64oq6rt" path="res://scenes/enemies/coal.gd" id="1_go4gr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_go4gr"]
+size = Vector2(16, 16)
+
+[node name="Coal" type="CharacterBody2D"]
+script = ExtResource("1_go4gr")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_go4gr")

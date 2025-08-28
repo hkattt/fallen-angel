@@ -1,7 +1,7 @@
-class_name Chracter extends CharacterBody2D
+class_name Character extends CharacterBody2D
 
-const MAX_SPEED: float       = 150.0
-const ACCELERAION: float     = 300.0
+const MAX_SPEED: float   = 150.0
+const ACCELERAION: float = 300.0
 
 var direction: Vector2        = Vector2.ZERO
 var current_velocity: Vector2 = Vector2.ZERO
