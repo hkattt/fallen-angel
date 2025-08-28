@@ -33,3 +33,4 @@ To setup the project locally, simply clone the repository and open the project i
 ## Asset References
 
 ## Code References
+- **MakerTech**. Health Bar. Retrieved from: https://www.youtube.com/watch?v=UEJcUnq2dfU
