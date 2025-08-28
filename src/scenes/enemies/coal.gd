@@ -1,5 +1,7 @@
 class_name Coal extends CharacterBody2D
 
+@onready var health: Health = $Health
+
 const coal_scene: PackedScene = preload("res://scenes/enemies/coal.tscn")
 
 const MAX_SPEED: float = 50
@@ -15,3 +17,9 @@ static func create(p_player: Character, p_position) -> Coal:
 	coal.add_child(follow)
 	
 	return coal
+
+func _ready() -> void:
+	health.health_depleted.connect(Callable(_on_health_depleted))
+	
+func _on_health_depleted() -> void:
+	queue_free()

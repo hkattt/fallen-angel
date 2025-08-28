@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx1tmvagmv17l"]
+[gd_scene load_steps=5 format=3 uid="uid://dx1tmvagmv17l"]
 
 [ext_resource type="Script" uid="uid://dcebud64oq6rt" path="res://scenes/enemies/coal.gd" id="1_go4gr"]
+[ext_resource type="PackedScene" uid="uid://bso7cgdni7cqe" path="res://scenes/components/hurt_box/hurt_box.tscn" id="2_8i012"]
+[ext_resource type="PackedScene" uid="uid://cndh0xt5nkkok" path="res://scenes/components/health/health.tscn" id="3_hcs2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go4gr"]
 size = Vector2(16, 16)
@@ -15,3 +17,10 @@ polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_go4gr")
+
+[node name="HurtBox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("2_8i012")]
+position = Vector2(8, 8)
+health = NodePath("../Health")
+
+[node name="Health" parent="." instance=ExtResource("3_hcs2l")]
+health = 100.0
