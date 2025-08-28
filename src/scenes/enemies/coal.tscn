@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx1tmvagmv17l"]
+[gd_scene load_steps=6 format=3 uid="uid://dx1tmvagmv17l"]
 
 [ext_resource type="Script" uid="uid://dcebud64oq6rt" path="res://scenes/enemies/coal.gd" id="1_go4gr"]
 [ext_resource type="PackedScene" uid="uid://bso7cgdni7cqe" path="res://scenes/components/hurt_box/hurt_box.tscn" id="2_8i012"]
 [ext_resource type="PackedScene" uid="uid://cndh0xt5nkkok" path="res://scenes/components/health/health.tscn" id="3_hcs2l"]
+[ext_resource type="PackedScene" uid="uid://dmn31138i5wuk" path="res://scenes/ui/health_bar/health_bar.tscn" id="4_hcs2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go4gr"]
 size = Vector2(16, 16)
 
 [node name="Coal" type="CharacterBody2D"]
+texture_filter = 3
 script = ExtResource("1_go4gr")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
@@ -24,3 +26,10 @@ health = NodePath("../Health")
 
 [node name="Health" parent="." instance=ExtResource("3_hcs2l")]
 health = 100.0
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health") instance=ExtResource("4_hcs2l")]
+offset_left = -5.0
+offset_top = -14.0
+offset_right = 20.0
+offset_bottom = -4.0
+health = NodePath("../Health")
